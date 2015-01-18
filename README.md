@@ -1,9 +1,16 @@
 # source-notes
 
-Search files for _TODO_, _FIXME_, or _OPTIMI(S|Z)E_ annotations within a
-directory's source code files (ie. `*.js`, `*.coffee`, `*.iced`, `*.styl`, 
-`*.jade`) displaying the file name, line number, annotation type, and 
-remaining annotation description.
+Search files for `TODO`, `FIXME`, or `OPTIMI(S|Z)E` annotations within a
+directory's source code files displaying the file name, line number, 
+annotation type, and remaining annotation description.
+
+Current files types include in the searach are
+
+- `*.js`
+- `*.coffee`
+- `*.iced`
+- `*.styl`
+- `*.jade`
 
 ## Example
 
@@ -13,7 +20,7 @@ To run `source-notes` on any files located in `test`:
 
 yielding:
 
-[![source-notes screenshot](https://github.com/akiva/source-notes/raw/master/screenshot.png)]
+![source-notes screenshot](https://github.com/akiva/source-notes/raw/master/screenshot.png)
 
 ## Installation
 
