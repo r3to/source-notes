@@ -1,0 +1,32 @@
+{
+  "name": "source-notes",
+  "version": "1.0.0",
+  "description": "Search files for TODO, FIXME, or OPTIMI(S|Z)E tags within a directories source code files",
+  "bin": {
+    "source-notes": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akiva Levy <akiva@sixthirteen.co> (http://sixthirteen.co/)",
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/akiva/source-notes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akiva/source-notes/issues"
+  },
+  "keywords": [
+    "notes",
+    "source code",
+    "annotations",
+    "todo".
+    "fixme"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "minimist": "^1.1.0",
+    "pretty-tree": "^0.2.0"
+  }
+}
