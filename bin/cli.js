@@ -21,8 +21,9 @@ if (argv.h) {
   return false;
 }
 
-// If no path is specified, use cwd
-if (!argv._[0]) argv._[0] = '.';
+// If a target path is passed in, removing any trailing slashes,
+// otherwise set path to cwd
+argv._[0] = !argv._[0] ? argv._[0].replace(/\/+$/, '') : '.';
 
 searchDirectory(argv._[0]);
 
@@ -66,14 +67,16 @@ function searchFile(file) {
     'todo|fixme|optimise|optimize';
   var regex = new RegExp('((\\/\\/|\\*)\\s?(' + types + '))\\W*(.*$)', 'i');
   var items = [];
-  var lines = fs.readFileSync(file).toString().split('\n');
+  fs.readFile(file, function (err, data) {
+    var lines = data.toString().split('\n');
 
-  lines.forEach(function (line, i) {
-    var match = line.match(regex);
-    if (match) items.push(formatSourceLine(i + 1, match[3], match[4]));
+    lines.forEach(function (line, i) {
+      var match = line.match(regex);
+      if (match) items.push(formatSourceLine(i + 1, match[3], match[4]));
+    });
+
+    if (items.length) console.log(tree({ label: file, leaf: items }));
   });
-
-  if (items.length) console.log(tree({ label: file, leaf: items }));
 }
 
 function error(err) {
