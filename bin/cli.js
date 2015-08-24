@@ -28,7 +28,7 @@ argv._[0] = !argv._[0] ? argv._[0].replace(/\/+$/, '') : '.';
 searchDirectory(argv._[0]);
 
 function isValidSourceFile(file) {
-  return /.*\.(js|coffee|iced|styl|jade|ejs)$/.test(file);
+  return /.*\.(js|coffee|iced|styl|jade|ejs|less)$/.test(file);
 }
 
 function searchDirectory(dir) {
